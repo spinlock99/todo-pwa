@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.4",
   "dependencies": {
     "dexie": "next",
     "immutable": "^3.8.1",
@@ -29,6 +29,7 @@
   "scripts": {
     "start": "webpack-dev-server --env=dev --progress --inline --hot",
     "build": "webpack --env=prod --progress --profile --colors",
-    "postbuild": "git add .; yarn version --new-version patch; git push origin master"
+    "predeploy": "yarn build",
+    "deploy": "git add .; yarn version --new-version patch; git push origin master"
   }
 }
