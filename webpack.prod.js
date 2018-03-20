@@ -33,7 +33,7 @@ module.exports = {
     ]),
     */
     new HtmlWebpackPlugin({
-      title: "name",
+      title: "NAME",
       template: "src/index.ejs"
     }),
     new HtmlWebpackPlugin({
