@@ -13,4 +13,4 @@
 * Configure your repo to serve the app:
   Navigate to the Settings Tab. Scroll down to GitHub Pages. Choose "master branch /docs folder" for the **Source**.
 
-Read the [wiki](https://github.com/spinlock99/todo-pwa/wiki) to learn more.
+# Read the [wiki](https://github.com/spinlock99/todo-pwa/wiki) to learn more.
