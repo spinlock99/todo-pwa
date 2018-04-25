@@ -7,5 +7,11 @@ OfflinePluginRuntime.install();
 
 initializeMaterialUI();
 
+if (navigator.standalone) {
+  gtag('event', 'load', { 'event_category': 'application', 'event_label': 'homescreen', 'value': 'yay' })
+} else {
+  gtag('event', 'load', { 'event_category': 'application', 'event_label': 'web', 'value': 'boo' })
+}
+
 const containerEl = document.getElementById("container");
 render(<App />, containerEl);
