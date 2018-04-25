@@ -37,14 +37,17 @@ export class App extends Component {
     return(
       <Provider store={this.configureStore()}>
         <MuiThemeProvider>
-          <Paper style={{ height: "95vh" }}>
-            <AppBar
-              title="Todo PWA"
-              showMenuIconButton={false}
-              zDepth={1}
-            />
-            <TodoList />
-          </Paper>
+          {navigator.standalone
+            ? <Paper style={{ height: "95vh" }}>
+                <AppBar
+                  title="Todo PWA"
+                  showMenuIconButton={false}
+                  zDepth={1}
+                />
+                <TodoList />
+              </Paper>
+            : <span style={{ position: "absolute", bottom: "5vh" }}>install the app to get started</span>
+          }
         </MuiThemeProvider>
       </Provider>
     );
