@@ -1,5 +1,5 @@
 {
-  "version": "1.0.13",
+  "version": "1.0.14",
   "dependencies": {
     "dexie": "next",
     "immutable": "^3.8.1",
@@ -26,12 +26,11 @@
     "react-hot-loader": "^4.0.0",
     "style-loader": "^0.16.1",
     "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.4",
     "webpack-hot-middleware": "^2.18.0"
   },
   "scripts": {
     "dev-server": "node dev-server.js",
-    "start": "webpack-dev-server --env=dev --progress --inline --hot",
+    "start": "yarn dev-server",
     "build": "webpack --env=prod --progress --profile --colors",
     "predeploy": "yarn build",
     "deploy": "git add .; yarn version --new-version patch; git push"
