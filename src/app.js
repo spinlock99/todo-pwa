@@ -67,7 +67,8 @@ const InstallInstructions = props =>
     display: "flex",
     flexDirection: "column",
     position: "absolute",
-    top: "5vh"
+    top: "5vh",
+    width: "95vw",
   }}>
     <h2>Install the app to get started:</h2>
     <h3>Step 1:</h3>
