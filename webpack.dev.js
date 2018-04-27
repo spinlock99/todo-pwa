@@ -1,9 +1,16 @@
-var path = require("path");
-var OfflinePlugin = require("offline-plugin");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
+const webpack = require("webpack");
+
 
 module.exports = {
-  entry: "./index.js",
+  entry: {
+    app: [
+      "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000",
+      "./index.js"
+    ]
+  },
+
   output: {
     path: __dirname,
     filename: "bundle.js",
@@ -25,6 +32,7 @@ module.exports = {
       title: "Todo PWA",
       template: "src/index.ejs"
     }),
-    new OfflinePlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
   ]
 };

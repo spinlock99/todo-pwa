@@ -56,20 +56,72 @@ export class App extends Component {
   }
 }
 
+const rowStyle = {
+  alignItems: "center",
+  display: "flex",
+  flexDirection: "row",
+}
+
 const InstallInstructions = props =>
-  <div style={{ position: "absolute", top: "5vh" }}>
-    <span>Install the app to get started:</span>
-    <br />
-    <span>Step 1: Click <ExitToApp style={{ transform: "rotate(-90deg)" }} /> to  open the Action Menu</span>
-    <br />
-    <span>Step 2: Click
-      <div style={{ backgroundColor: "black", height: "25px", width: "25px", borderRadius: "6px" }}>
-        <ContentAdd  style={{ color: "white", height: "15px", width: "15px", marginLeft: "5px", marginTop: "5px" }}/>
+  <div style={{
+    display: "flex",
+    flexDirection: "column",
+    position: "absolute",
+    top: "5vh"
+  }}>
+    <h2>Install the app to get started:</h2>
+    <h3>Step 1:</h3>
+    <div style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      backgroundColor: "grey",
+      borderRadius: "10px",
+      paddingTop: "15px",
+    }}>
+      <div>
+        Click <ExitToApp style={{ transform: "rotate(-90deg)", height: "25px", width: "25px", marginLeft: "10px", marginBottom: "-5px" }} />
       </div>
-      Add to
-      <br />
-      Home Screen
-      <br />
-      to finish installing the app.
-    </span>
+      <h4>to open the Action Menu</h4>
+    </div>
+    <h3>Step 2:</h3>
+    <div style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      backgroundColor: "grey",
+      borderRadius: "10px",
+      paddingTop: "15px",
+    }}>
+      <div style={rowStyle}>
+        Click <AddToHomeScreen />
+      </div>
+      <h4>to finish installing the app.</h4>
+    </div>
+  </div>
+
+const AddToHomeScreen = props =>
+  <div style={{
+    alignItems: "center",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+  }}>
+    <div style={{
+      backgroundColor: "black",
+      height: "25px",
+      width: "25px",
+      borderRadius: "6px",
+      margin: "10px",
+    }}>
+      <ContentAdd  style={{
+        color: "white",
+        height: "15px",
+        width: "15px",
+        marginLeft: "5px",
+        marginTop: "5px"
+      }} />
+    </div>
+    <span style={{ fontSize: "small" }}>Add to</span>
+    <span style={{ fontSize: "small" }}>Home Screen</span>
   </div>
