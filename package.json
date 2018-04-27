@@ -34,6 +34,6 @@
     "start": "webpack-dev-server --env=dev --progress --inline --hot",
     "build": "webpack --env=prod --progress --profile --colors",
     "predeploy": "yarn build",
-    "deploy": "git add .; yarn version --new-version patch; git push origin master"
+    "deploy": "git add .; yarn version --new-version patch; git push"
   }
 }
