@@ -29,7 +29,7 @@
     "webpack-hot-middleware": "^2.22.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --env=dev --progress --inline --hot",
+    "start": "node developmentServer.js",
     "build": "webpack --env=prod --progress --profile --colors",
     "predeploy": "yarn build",
     "deploy": "git add .; yarn version --new-version patch; git push origin master"

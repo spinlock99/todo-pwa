@@ -26,10 +26,6 @@ app.use(webpackHotMiddleware(compiler, {
   heartbeat: 10 * 1000
 }));
 
-app.get("/images/*", function (req, res, next) {
-  console.log(req.url)
-});
-
 app.get("*", function (req, res, next) {
   compiler.outputFileSystem.readFile(
     path.join(__dirname, "index.html"),

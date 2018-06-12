@@ -11,15 +11,26 @@ module.exports = {
     publicPath: "/"
   },
   module: {
-    loaders: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: "babel-loader",
-      include: __dirname,
-      query: {
-        presets: ["es2015", "react", "react-hmre"]
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        include: __dirname,
+        query: {
+          presets: ["es2015", "react", "react-hmre"]
+        }
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {}
+          }
+        ]
       }
-    }]
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
