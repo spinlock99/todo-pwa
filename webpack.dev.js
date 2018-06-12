@@ -1,4 +1,5 @@
 var path = require("path");
+var webpack = require("webpack");
 var OfflinePlugin = require("offline-plugin");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -25,6 +26,7 @@ module.exports = {
       title: "NAME",
       template: "src/index.ejs"
     }),
+    new webpack.HotModuleReplacementPlugin(),
     new OfflinePlugin()
   ]
 };
