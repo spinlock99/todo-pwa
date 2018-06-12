@@ -39,7 +39,7 @@ export class App extends Component {
     return(
       <Provider store={this.configureStore()}>
         <MuiThemeProvider>
-          {navigator.standalone
+          {navigator.standalone || process.env.LAUNCHED_FROM_HOMESCREEN
             ? <Paper style={{ height: "95vh" }}>
                 <AppBar
                   title="Todo PWA"
