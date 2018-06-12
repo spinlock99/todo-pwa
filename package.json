@@ -1,5 +1,5 @@
 {
-  "version": "1.0.4",
+  "version": "1.0.14",
   "dependencies": {
     "dexie": "next",
     "immutable": "^3.8.1",
@@ -20,18 +20,19 @@
     "babel-preset-react-hmre": "^1.1.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
-    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
     "html-webpack-plugin": "^2.28.0",
-    "react-hot-loader": "next",
+    "path": "^0.12.7",
+    "react-hot-loader": "^4.0.0",
     "style-loader": "^0.16.1",
     "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.4",
-    "webpack-hot-middleware": "^2.22.2"
+    "webpack-hot-middleware": "^2.18.0"
   },
   "scripts": {
-    "start": "node developmentServer.js",
+    "dev-server": "node dev-server.js",
+    "start": "yarn dev-server",
     "build": "webpack --env=prod --progress --profile --colors",
     "predeploy": "yarn build",
-    "deploy": "git add .; yarn version --new-version patch; git push origin master"
+    "deploy": "git add .; yarn version --new-version patch; git push"
   }
 }

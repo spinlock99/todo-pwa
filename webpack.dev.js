@@ -1,34 +1,29 @@
-var path = require("path");
-var webpack = require("webpack");
-var OfflinePlugin = require("offline-plugin");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
+const webpack = require("webpack");
+
 
 module.exports = {
-  entry: "./index.js",
+  entry: {
+    app: [
+      "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000",
+      "./index.js"
+    ]
+  },
+
   output: {
     path: __dirname,
     filename: "bundle.js",
     publicPath: "/"
   },
   module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "babel-loader",
-        include: __dirname,
-        query: {
-          presets: ["es2015", "react", "react-hmre"]
-        }
-      },
-      {
-        test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {}
-          }
-        ]
+    loaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: "babel-loader",
+      include: __dirname,
+      query: {
+        presets: ["es2015", "react"]
       }
     ]
   },
@@ -38,6 +33,6 @@ module.exports = {
       template: "src/index.ejs"
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new OfflinePlugin()
+    new webpack.NoEmitOnErrorsPlugin()
   ]
 };
