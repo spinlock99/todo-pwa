@@ -1,9 +1,9 @@
 {
-  "short_name": "NAME",
-  "name": "NAME",
+  "short_name": "todo-pwa",
+  "name": "todo-pwa",
   "icons": [
     {
-      "src":"ICON",
+      "src":"https://process.filestackapi.com/resize=width:144/CxfFZvFqQu65W2mQACmj",
       "sizes": "144x144",
       "type": "image/png"
     }
