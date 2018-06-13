@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const webpack = require("webpack");
-
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   entry: {
@@ -33,6 +33,7 @@ module.exports = {
       template: "src/index.ejs"
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new Dotenv()
   ]
 };

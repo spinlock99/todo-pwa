@@ -1,6 +1,9 @@
 # Install
 
     yarn
+    npm install node
+
+* you'll need to install node with npm to get a local version
 
 # Run Locally
 
