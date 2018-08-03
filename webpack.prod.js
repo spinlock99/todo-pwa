@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, "docs"),
     filename: "bundle.js",
-    publicPath: "/todo-pwa/"
+    publicPath: "/NAME/"
   },
   module: {
     loaders: [{
@@ -33,7 +33,7 @@ module.exports = {
     ]),
     */
     new HtmlWebpackPlugin({
-      title: "Todo PWA",
+      title: "NAME",
       template: "src/index.ejs"
     }),
     new HtmlWebpackPlugin({
